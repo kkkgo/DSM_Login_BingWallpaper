@@ -1,6 +1,7 @@
-wget "https://cn.bing.com/$(curl -s "http://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1"|grep -Po 'url[" :]+\K[^"]+')" -qO /volume1/web/bing.jpg
-ln -sf /volume1/web/bing.jpg /usr/syno/etc/login_background_hd.jpg
-ln -sf /volume1/web/bing.jpg /usr/syno/etc/login_background.jpg
+save="/volume1/web/bing.jpg"
+wget "https://cn.bing.com/$(curl -s "http://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1"|grep -Po 'url[" :]+\K[^"]+')" -qO $save
+ln -sf $save /usr/syno/etc/login_background_hd.jpg
+ln -sf $save /usr/syno/etc/login_background.jpg
 story=$(curl -s https://cn.bing.com/cnhp/coverstory)
 title=$(echo $story|grep -Po 'title[" :]+\K[^"]+')
 attribute=$(echo $story|grep -Po 'attribute[" :]+\K[^"]+')
