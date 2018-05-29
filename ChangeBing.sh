@@ -10,7 +10,7 @@ fi
 sed -i s/login_background_customize=.*/login_background_customize=\"yes\"/g /etc/synoinfo.conf
 ln -sf $save /usr/syno/etc/login_background_hd.jpg
 ln -sf $save /usr/syno/etc/login_background.jpg
-story=$(curl -s https://cn.bing.com/cnhp/coverstory)
+story=$(curl -s https://www4.bing.com/cnhp/coverstory)
 title=$(echo $story|grep -Po 'title[" :]+\K[^"]+')
 attribute=$(echo $story|grep -Po 'attribute[" :]+\K[^"]+')
 sed -i s/login_welcome_title=.*/login_welcome_title=\"$title\"/g /etc/synoinfo.conf
