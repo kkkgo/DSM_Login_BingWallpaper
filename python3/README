@@ -1,0 +1,6 @@
+套件中心安装Python3。通过SSH登录群晖并切换到root用户，执行如下：
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+ln -s $(find / -maxdepth 7 -name "pip3") /usr/local/bin/pip3
+pip3 install -r requests.txt
+python3 ChangeBGPviaMSBing.py
