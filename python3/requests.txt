@@ -1,0 +1,8 @@
+certifi==2018.11.29
+chardet==3.0.4
+configobj==5.0.6
+configparser==3.5.2
+idna==2.8
+requests==2.21.0
+six==1.12.0
+urllib3==1.24.1
