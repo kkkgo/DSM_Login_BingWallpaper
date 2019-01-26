@@ -1,3 +1,4 @@
+# 这个路径在 6.1.7-15284 Update 3不可用，请修改为可访问路径，example /volume1/wallpaper/
 save="/usr/syno/etc/bing.jpg"
 #如果需要收集保存每日美图可去掉注释
 #保存路径path，请设置自己的文件夹，在FileStation里面右键文件夹属性可以看到路径
