@@ -8,13 +8,13 @@ date=$(echo $pic|sed 's/.\+enddate[": ]\+//g'|grep -Eo 2[0-9]{7}|head -1)
 tmpfile=/tmp/$date"_bing.jpg"
 wget -t 5 --no-check-certificate  $link -qO $tmpfile
 rm -rf /usr/syno/etc/login_background*.jpg
-cp -f $tmpfile /usr/syno/etc/login_background.jpg
-cp -f $tmpfile /usr/syno/etc/login_background_hd.jpg
-cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default_wallpaper/01.jpg
-cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/1x/default_wallpaper/dsm6_01.jpg
-cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/2x/default_wallpaper/dsm6_01.jpg
-cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/1x/default_wallpaper/dsm6_02.jpg
-cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/2x/default_wallpaper/dsm6_02.jpg
+cp -f $tmpfile /usr/syno/etc/login_background.jpg &>/dev/null
+cp -f $tmpfile /usr/syno/etc/login_background_hd.jpg &>/dev/null
+cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default_wallpaper/01.jpg &>/dev/null
+cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/1x/default_wallpaper/dsm6_01.jpg &>/dev/null
+cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/2x/default_wallpaper/dsm6_01.jpg &>/dev/null
+cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/1x/default_wallpaper/dsm6_02.jpg &>/dev/null
+cp -f $tmpfile /usr/syno/synoman/webman/resources/images/default/2x/default_wallpaper/dsm6_02.jpg &>/dev/null
 story=$(wget -t 5 --no-check-certificate -qO- "https://www.bing.com/cnhp/life?mkt=zh-CN")
 if (echo $story|grep hplaTtl &>/dev/null) then
 title=$(echo $story|sed 's/.\+"hplaTtl">//g'|sed 's/<.\+//g')
