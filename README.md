@@ -3,5 +3,4 @@
 ![登陆界面](https://i.loli.net/2019/01/11/5c378ea0ed2ef.png)
 ![今日美图](https://i.loli.net/2019/01/11/5c378ea22efb1.png)
 测试群晖版本DSM5.x,DSM6.x.  
-如果需要同时设置桌面的壁纸，可以把最后一行的注释去掉，把admin改为你的用户名.如果需要收集每日美图，可以把前面的注释去掉，修改path为你保存的文件夹  
 更多信息：https://03k.org/dsm-bing.html    
