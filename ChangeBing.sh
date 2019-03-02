@@ -20,8 +20,8 @@ copyright=$(echo $pic|sed 's/.\+"copyright[:" ]\+//g'|sed 's/".\+//g')
 word=$(echo $copyright|sed 's/(.\+//g')
 if  [ ! -n "$title" ];then
 cninfo=$(echo $copyright|tr '，' '"'|tr ',' '"'|tr '(' '"'|sed 's/ //g'|sed 's/\//_/g'|sed 's/)//g')
-title=$(echo $cninfo|tr '"' '\n'|head -1)
-word=$(echo $cninfo|tr '"' '\n'|sed -n '2p')
+title=$(echo $cninfo|cut -d'"' -f1)
+word=$(echo $cninfo|cut -d'"' -f2)
 fi
 if (echo $savepath|grep -q '/') then
 cp -f $tmpfile $savepath/$date@$title-$word.jpg
