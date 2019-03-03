@@ -23,14 +23,14 @@ cninfo=$(echo $copyright|tr '，' '"'|tr ',' '"'|tr '(' '"'|sed 's/ //g'|sed 's/
 title=$(echo $cninfo|cut -d'"' -f1)
 word=$(echo $cninfo|cut -d'"' -f2)
 fi
-if (echo $savepath|grep -q '/') then
-cp -f $tmpfile $savepath/$date@$title-$word.jpg
 sed -i s/login_background_customize=.*//g /etc/synoinfo.conf
 echo "login_background_customize=\"yes\"">>/etc/synoinfo.conf
 sed -i s/login_welcome_title=.*//g /etc/synoinfo.conf
 echo "login_welcome_title=\"$title\"">>/etc/synoinfo.conf
 sed -i s/login_welcome_msg=.*//g /etc/synoinfo.conf
 echo "login_welcome_msg=\"$word\"">>/etc/synoinfo.conf
+if (echo $savepath|grep -q '/') then
+cp -f $tmpfile $savepath/$date@$title-$word.jpg
 fi
 fi
 rm -rf /tmp/*_bing.jpg
