@@ -19,7 +19,7 @@ title=$(echo $pic|sed 's/.\+"title":"//g'|sed 's/".\+//g')
 copyright=$(echo $pic|sed 's/.\+"copyright[:" ]\+//g'|sed 's/".\+//g')
 word=$(echo $copyright|sed 's/(.\+//g')
 if  [ ! -n "$title" ];then
-cninfo=$(echo $copyright|tr '，' '"'|tr ',' '"'|tr '(' '"'|sed 's/ //g'|sed 's/\//_/g'|sed 's/)//g')
+cninfo=$(echo $copyright|sed 's/，/"/g'|sed 's/,/"/g'|sed 's/(/"/g'|sed 's/ //g'|sed 's/\//_/g'|sed 's/)//g')
 title=$(echo $cninfo|cut -d'"' -f1)
 word=$(echo $cninfo|cut -d'"' -f2)
 fi
