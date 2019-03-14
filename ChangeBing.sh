@@ -2,11 +2,12 @@
 #savepath="/volume1/wallpaper"
 #在FileStation里面右键文件夹属性可以看到路径
 pic=$(wget -t 5 --no-check-certificate -qO- "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1")
-if (echo $pic|grep -q enddate) then
+echo $pic|grep -q enddate||exit
 link=$(echo https://www.bing.com$(echo $pic|sed 's/.\+"url"[:" ]\+//g'|sed 's/".\+//g'))
 date=$(echo $pic|sed 's/.\+enddate[": ]\+//g'|grep -Eo 2[0-9]{7}|head -1)
 tmpfile=/tmp/$date"_bing.jpg"
 wget -t 5 --no-check-certificate  $link -qO $tmpfile
+[ -s $tmpfile ]||exit
 rm -rf /usr/syno/etc/login_background*.jpg
 cp -f $tmpfile /usr/syno/etc/login_background.jpg &>/dev/null
 cp -f $tmpfile /usr/syno/etc/login_background_hd.jpg &>/dev/null
@@ -31,6 +32,5 @@ sed -i s/login_welcome_msg=.*//g /etc/synoinfo.conf
 echo "login_welcome_msg=\"$word\"">>/etc/synoinfo.conf
 if (echo $savepath|grep -q '/') then
 cp -f $tmpfile $savepath/$date@$title-$word.jpg
-fi
 fi
 rm -rf /tmp/*_bing.jpg
