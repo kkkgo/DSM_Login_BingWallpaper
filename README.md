@@ -1,7 +1,7 @@
 # 使用脚本前请先设置任意自带壁纸为背景  
 ![sel.png](https://i.loli.net/2020/02/20/Kbn9YQOmsDt6rHd.png)  
   
-![sel.png](https://i.loli.net/2020/02/20/Kbn9YQOmsDt6rHd.png)
+# DSM_Login_BingWallpaper
 把脚本加入群晖DSM的计划任务（请选择root用户）里面即可自动更换登录界面的背景为bing今日美图，并且替换欢迎信息为美图简介.  
 ![计划任务设置](https://i.loli.net/2019/01/11/5c378d53206a0.png)
 ![登陆界面](https://i.loli.net/2019/01/11/5c378ea0ed2ef.png)
