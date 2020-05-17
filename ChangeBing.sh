@@ -28,6 +28,7 @@ sed -i s/login_welcome_msg=.*//g /etc/synoinfo.conf
 echo "login_welcome_msg=\"$word\"">>/etc/synoinfo.conf
 if (echo $savepath|grep -q '/') then
 cp -f $tmpfile $savepath/$date@$title-$word.jpg
+synoindex -a $savepath/$date@$title-$word.jpg
 fi
 if (! -n "$username") then
 cp -f $tmpfile /usr/syno/etc/preference/$username/wallpaper
