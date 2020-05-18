@@ -30,7 +30,7 @@ if (echo $savepath|grep -q '/') then
 cp -f $tmpfile $savepath/$date@$title-$word.jpg
 synoindex -a $savepath/$date@$title-$word.jpg
 fi
-if (! -n "$username") then
+if [ -n "$username" ]; then
 cp -f $tmpfile /usr/syno/etc/preference/$username/wallpaper
 chown $user:users /usr/syno/etc/preference/$username/wallpaper
 fi
