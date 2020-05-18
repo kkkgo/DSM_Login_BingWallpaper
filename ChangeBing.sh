@@ -1,6 +1,6 @@
 #如需收集每日美图去掉下面注释设置保存文件夹路径，在FileStation里面右键文件夹属性可以看到路径
 #savepath="/volume1/wallpaper"
-#如需将收集的图片同时应用于用户桌面，请注释掉下面的用户名变量并改为对应用户名，并在“DSM桌面右上角-个人设置-桌面”启用“自定义壁纸”后任意选择一张图片
+#如需将收集的图片同时应用于用户桌面，请去掉下面注释改为对应用户名，并在“DSM桌面右上角-个人设置-桌面”启用“自定义壁纸”后任意选择一张图片
 #username="admin"
 pic=$(wget -t 5 --no-check-certificate -qO- "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1")
 echo $pic|grep -q enddate||exit
