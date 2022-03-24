@@ -1,3 +1,5 @@
+#设置用户桌面背景
+username="jaeger"
 #如需收集每日美图去掉下面注释设置保存文件夹路径
 #savepath="/volume1/wallpaper"
 #在FileStation里面右键文件夹属性可以看到路径
@@ -28,4 +30,12 @@ echo "login_welcome_msg=\"$word\"">>/etc/synoinfo.conf
 if (echo $savepath|grep -q '/') then
 cp -f $tmpfile $savepath/$date@$title-$word.jpg
 fi
+
+#将图片应用于用户桌面
+userbkg="/usr/syno/etc/preference/$username/wallpaper"
+if [ -n "$userbkg" ]; then
+	cp -f $tmpfile $userbkg
+	chown $username:users $userbkg
+fi
+
 rm -rf /tmp/*_bing.jpg
