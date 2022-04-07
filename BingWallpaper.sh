@@ -45,7 +45,7 @@ if [ -n "$loginbkg" ]; then
 		sed -i "s/login_welcome_title=.*/login_welcome_title=\"$title\"/g" /etc/synoinfo.conf
 		sed -i "s/login_welcome_msg=.*/login_welcome_msg=\"$word\"/g" /etc/synoinfo.conf
 	else
-		echo "#ChangeBing.sh">>/etc/synoinfo.conf
+		echo "# BingWallpaper.sh">>/etc/synoinfo.conf
 		echo "login_background_customize=\"yes\"">>/etc/synoinfo.conf
 		echo "login_welcome_title=\"$title\"">>/etc/synoinfo.conf
 		echo "login_welcome_msg=\"$word\"">>/etc/synoinfo.conf
