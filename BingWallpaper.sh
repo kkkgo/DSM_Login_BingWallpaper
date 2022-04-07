@@ -40,7 +40,7 @@ if [ -n "$loginbkg" ]; then
 	rm -rf /usr/syno/etc/login_background*.jpg
 	cp -f $tmpfile /usr/syno/etc/login_background.jpg &>/dev/null
 	cp -f $tmpfile /usr/syno/etc/login_background_hd.jpg &>/dev/null
-	if [ grep -q login_background_customize /etc/synoinfo.conf ]; then
+	if grep -q login_background_customize /etc/synoinfo.conf; then
 		sed -i "s/login_background_customize=.*/login_background_customize=\"yes\"/g" /etc/synoinfo.conf
 		sed -i "s/login_welcome_title=.*/login_welcome_title=\"$title\"/g" /etc/synoinfo.conf
 		sed -i "s/login_welcome_msg=.*/login_welcome_msg=\"$word\"/g" /etc/synoinfo.conf
