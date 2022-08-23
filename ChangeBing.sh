@@ -1,7 +1,7 @@
 # 如需收集保存壁纸,请去掉下面注释,设置保存文件夹路径
 # 在FileStation里面右键文件夹属性可以看到路径
 # If you want to collect and save Wallpapers, 
-# please remove the comments below and set the savepath.
+# please remove the comment below and set the savepath.
 # Right click the folder property in FileStation to see the path.
 
 #savepath="/volume1/myshare/wallpaper"
@@ -12,6 +12,14 @@
 # To download a larger original picture, set res = raw
 
 #res=4k
+
+# 修改用户桌面壁纸,注释后会替换系统的wallpaper1
+# 你需要清空浏览器缓存查看效果，仅在DSM7.x上测试.
+# Modify user desktop wallpaper.Only test for DMS7.x.
+# System "Wallpaper1" will replaced by remove the comment.
+# You need to clear the browser cache to see the effect.
+
+#desktop=yes
 
 echo "[x]Collecting information..."
 pic="https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1"
@@ -71,3 +79,13 @@ ln -sf /usr/syno/etc/login_background.jpg /usr/syno/etc/login_background_hd.jpg
 
 echo "[x]Clean..."
 rm -f $tmpfile
+
+if [ "$desktop" == "yes" ]
+then echo "[x]Applying user desktop wallpaper..."
+cp /usr/syno/etc/login_background.jpg /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg
+ln -sf /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg /usr/syno/synoman/webman/resources/images/1x/default_wallpaper/dsm7_01.jpg
+ln -sf /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm6_01.jpg
+ln -sf /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg /usr/syno/synoman/webman/resources/images/1x/default_wallpaper/dsm6_01.jpg
+ln -sf /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm5_01.jpg
+ln -sf /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg /usr/syno/synoman/webman/resources/images/1x/default_wallpaper/dsm5_01.jpg
+fi
