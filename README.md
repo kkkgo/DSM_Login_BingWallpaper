@@ -1,8 +1,8 @@
 # DSM_Login_BingWallpaper
-把脚本加入群晖DSM的计划任务（请选择root用户）里面即可自动更换登录界面的背景为bing今日美图，并且替换欢迎信息为美图简介.   
-Add the script to the scheduled task of Synology DSM (please select the root user) to automatically change the background of the login interface to Bing Today's wallpaper, and replace the welcome message with wallpaper's introduction.
+把脚本复制加入群晖DSM的计划任务（请选择root用户）里面即可自动更换登录界面的背景为bing今日美图，并且替换欢迎信息为美图简介.   
+Copy the script to the scheduled task of Synology DSM (please select the root user) to automatically change the background of the login interface to Bing Today's wallpaper, and replace the welcome message with wallpaper's introduction.
 ![bing](https://s2.loli.net/2022/08/24/Oiz1tRuYgZjkoUe.png)  
-![scheduled](https://i.loli.net/2019/01/11/5c378d53206a0.png)  
+![scheduled](https://s2.loli.net/2022/08/24/JcPOiAgGVzIlnCW.png)  
 ![login](https://s2.loli.net/2022/08/24/3KsYcP5mJHp1rRz.png)  
 Test for DSM5.x,DSM6.x. DSM 7.x 
 ```sh
@@ -29,5 +29,4 @@ Test for DSM5.x,DSM6.x. DSM 7.x
 
 #desktop=yes
 ```
-![save](https://s2.loli.net/2022/08/23/YRUFpG4kK1iV7dy.png)
-More info ：https://03k.org/dsm-bing.html    
+![save](https://s2.loli.net/2022/08/24/RWOTXV96HS37dAB.png)More info ：https://03k.org/dsm-bing.html    
