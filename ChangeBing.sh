@@ -54,10 +54,10 @@ ls -lah $tmpfile||exit
 
 echo "[x]Copying wallpaper..."
 if [ "$savepath" != "" ]
-then cp $tmpfile $savepath
+then cp $tmpfile "$savepath"
 echo "Save:"$savepath
-ls -lah $savepath|grep $date
-cd $savepath
+ls -lah "$savepath"|grep $date
+cd "$savepath"
 chmod 777 $filename
 else echo "savepath is not set, skip copy."
 fi
@@ -83,6 +83,9 @@ rm -f /tmp/bing_*.jpg
 if [ "$desktop" == "yes" ]
 then echo "[x]Applying user desktop wallpaper..."
 mkdir -p /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/
+mkdir -p /usr/syno/synoman/webman/resources/images/1x/default_wallpaper/
+mkdir -p /usr/syno/synoman/webman/resources/images/default/1x/default_wallpaper/
+mkdir -p /usr/syno/synoman/webman/resources/images/default_wallpaper/
 #7.0
 cp -f /usr/syno/etc/login_background.jpg /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg
 ln -sf /usr/syno/synoman/webman/resources/images/2x/default_wallpaper/dsm7_01.jpg /usr/syno/synoman/webman/resources/images/1x/default_wallpaper/dsm7_01.jpg
