@@ -16,8 +16,8 @@ Test for DSM5.x,DSM6.x. DSM 7.x
 
 # 如需下载4k分辨率,请设置res=4k
 # 如需下载体积更大的4k以上分辨率的原始图片,请设置res=raw
-# To download 4K resolution, set res = 4K
-# To download a larger original picture, set res = raw
+# To download 4K resolution, set res=4K
+# To download a larger original picture, set res=raw
 
 #res=4k
 
