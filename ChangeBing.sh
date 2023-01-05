@@ -1,3 +1,6 @@
+# 设置你的语言
+# set your language(en-US,zh-CN...)
+lang="zh-CN"
 # 如需收集保存壁纸,请去掉下面注释,设置保存文件夹路径
 # 在FileStation里面右键文件夹属性可以看到路径
 # If you want to collect and save Wallpapers, 
@@ -26,7 +29,7 @@ pic="https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1"
 if [ "$res" != "" ]
 then pic="https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&uhd=1&uhdwidth=3840&uhdheight=2160"
 fi
-pic=$(wget -t 5 --no-check-certificate -qO- $pic)
+pic=$(wget -t 5 --no-check-certificate -qO- $pic --header="cookie:_EDGE_S=mkt=$lang")
 echo $pic|grep -q startdate||exit
 link=$(echo https://www.bing.com$(echo $pic|sed 's/.\+"url"[:" ]\+//g'|sed 's/".\+//g'))
 if [ "$res" == "raw" ]
